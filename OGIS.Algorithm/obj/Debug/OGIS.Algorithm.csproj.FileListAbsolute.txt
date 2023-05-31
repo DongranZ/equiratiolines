@@ -1,0 +1,12 @@
+C:\E\richway\OGIS.Algorithm\Output\OGIS.Algorithm.dll
+C:\E\richway\OGIS.Algorithm\Output\OGIS.Algorithm.pdb
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csproj.AssemblyReference.cache
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csproj.CoreCompileInputs.cache
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csproj.CopyComplete
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb
+D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Algorithm.dll
+D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Algorithm.pdb
+D:\业务工作\2023\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csprojResolveAssemblyReference.cache
+D:\业务工作\2023\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
+D:\业务工作\2023\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb

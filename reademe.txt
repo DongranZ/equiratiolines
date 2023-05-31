@@ -1,0 +1,4 @@
+Name of the code/library: equiratiolines
+Contact: zjh_011@163.com,86-22-24010806 
+Program language: Visual studio C# 2012
+Software required: ArcGIS Engine 10.2;Microsoft .NET Framework 4.0

@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0011EF6D-4F90-4D52-A9B4-E717960F49AA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OGIS.UI</RootNamespace>
+    <AssemblyName>OGIS.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.AxControls\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.AxControls.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.Carto\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.Carto.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.Controls\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesFile\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesFile.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.DataSourcesGDB\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.Display\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DisplayUI, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.DisplayUI\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.DisplayUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.Geodatabase\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.Geometry\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.System\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.System.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.SystemUI\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.SystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version, Version=10.2.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\ESRI.ArcGIS.Version\10.2.0.0__8fc3cc631e44ad86\ESRI.ArcGIS.Version.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArcGisAppStart\LicenseInitializer.cs" />
+    <Compile Include="ArcGisAppStart\UI_Init.cs" />
+    <Compile Include="ArcgisMap\IBaseMapView.cs" />
+    <Compile Include="ArcgisMap\MapDocumenHelper.cs" />
+    <Compile Include="ArcgisMap\OMapDocument.cs" />
+    <Compile Include="ArcgisMap\IOMapDocument.cs" />
+    <Compile Include="ArcgisMap\MapBll.cs" />
+    <Compile Include="IRatioPoint.cs" />
+    <Compile Include="MainForm_BLL.cs" />
+    <Compile Include="Common\CommonFunc.cs" />
+    <Compile Include="Common\Helper\SpatialReferenceHelper.cs" />
+    <Compile Include="Common\Helper\GeometryHelper.cs" />
+    <Compile Include="IMeasure.cs" />
+    <Compile Include="Measure.cs" />
+    <Compile Include="Models\AOceanEntity.cs" />
+    <Compile Include="Models\OceanEventArgs.cs" />
+    <Compile Include="Models\ToolEntity.cs" />
+    <Compile Include="Models\CurrentOperate.cs" />
+    <Compile Include="Models\FeatureFieldExtendEntity.cs" />
+    <Compile Include="Models\OcsLineEnum.cs" />
+    <Compile Include="Models\FeatureFieldEntity.cs" />
+    <Compile Include="Pragrom.cs" />
+    <Compile Include="Controls\NumTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumTextBox.designer.cs">
+      <DependentUpon>NumTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RatioText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RatioText.designer.cs">
+      <DependentUpon>RatioText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RowModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RatiioPoint.cs" />
+    <Compile Include="RatioPointControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RatioPointControl.Designer.cs">
+      <DependentUpon>RatioPointControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ExcelService.cs" />
+    <Compile Include="Services\WorkSpaceAndFeatureHelper.cs" />
+    <Compile Include="Models\FeaturesFieldEntity.cs" />
+    <Compile Include="Services\ShpService.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\RatioText.resx">
+      <DependentUpon>RatioText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RatioPointControl.resx">
+      <DependentUpon>RatioPointControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Img\ico\logoLarge.ico" />
+    <Content Include="Img\ico\logoSmall.ico" />
+    <Content Include="Img\images\保存.png" />
+    <Content Include="Img\images\划界_绘制.png" />
+    <Content Include="Img\images\划界_选择.png" />
+    <Content Include="Img\images\另存.png" />
+    <Content Include="Img\images\地图全图.png" />
+    <Content Include="Img\images\地图平移.png" />
+    <Content Include="Img\images\地图放大.png" />
+    <Content Include="Img\images\地图缩小.png" />
+    <Content Include="Img\images\帮助.png" />
+    <Content Include="Img\images\打开.png" />
+    <None Include="Img\images\新建.png" />
+    <Content Include="Img\images\无功能按钮.png" />
+    <Content Include="Img\images\要素_全清.png" />
+    <Content Include="Img\images\要素_删除.png" />
+    <Content Include="Img\images\要素_清图.png" />
+    <Content Include="Img\images\要素_清图1.png" />
+    <Content Include="Img\images\要素选择_.png" />
+    <Content Include="Img\images\要素选择_框选.png" />
+    <Content Include="Img\images\要素选择_点选 .png" />
+    <None Include="Img\images\选择shp.png" />
+    <Content Include="Img\imgNotFound.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArcengineHelper\ArcengineHelper.csproj">
+      <Project>{52ff8b3c-15bf-4b85-8e97-c01b47e0366d}</Project>
+      <Name>ArcengineHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OGIS.Contracts\OGIS.Contracts.csproj">
+      <Project>{78dd7302-211e-425c-87b2-d5cde62f0c44}</Project>
+      <Name>OGIS.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OGIS.Core\OGIS.Core.csproj">
+      <Project>{4858efc9-c3e2-4699-922d-8ee39158bb66}</Project>
+      <Name>OGIS.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
