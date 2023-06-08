@@ -14,3 +14,10 @@ D:\业务工作\2023\OGIS.Algorithm\ArcengineHelper\obj\Debug\ArcengineHelper.Pr
 D:\业务工作\2023\OGIS.Algorithm\ArcengineHelper\obj\Debug\ArcengineHelper.csproj.GenerateResource.Cache
 D:\业务工作\2023\OGIS.Algorithm\ArcengineHelper\obj\Debug\ArcengineHelper.dll
 D:\业务工作\2023\OGIS.Algorithm\ArcengineHelper\obj\Debug\ArcengineHelper.pdb
+D:\业务工作\2023\equiratiolines\Output\ArcengineHelper.dll
+D:\业务工作\2023\equiratiolines\Output\ArcengineHelper.pdb
+D:\业务工作\2023\equiratiolines\ArcengineHelper\obj\Debug\ArcengineHelper.csprojResolveAssemblyReference.cache
+D:\业务工作\2023\equiratiolines\ArcengineHelper\obj\Debug\ArcengineHelper.Properties.Resources.resources
+D:\业务工作\2023\equiratiolines\ArcengineHelper\obj\Debug\ArcengineHelper.csproj.GenerateResource.Cache
+D:\业务工作\2023\equiratiolines\ArcengineHelper\obj\Debug\ArcengineHelper.dll
+D:\业务工作\2023\equiratiolines\ArcengineHelper\obj\Debug\ArcengineHelper.pdb

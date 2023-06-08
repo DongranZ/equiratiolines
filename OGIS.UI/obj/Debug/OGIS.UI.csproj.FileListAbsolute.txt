@@ -24,3 +24,15 @@ D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.UI.exe
 D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.UI.pdb
 D:\业务工作\2023\OGIS.Algorithm\OGIS.UI\obj\Debug\OGIS.UI.exe
 D:\业务工作\2023\OGIS.Algorithm\OGIS.UI\obj\Debug\OGIS.UI.pdb
+D:\业务工作\2023\equiratiolines\Output\OGIS.UI.exe.config
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.csproj.ResolveComReference.cache
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.exe
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.pdb
+D:\业务工作\2023\equiratiolines\Output\OGIS.UI.exe
+D:\业务工作\2023\equiratiolines\Output\OGIS.UI.pdb
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.csprojResolveAssemblyReference.cache
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\Richway.Ocean.Common.UserControls.RatioText.resources
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.MainForm.resources
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.Properties.Resources.resources
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.RatioPointControl.resources
+D:\业务工作\2023\equiratiolines\OGIS.UI\obj\Debug\OGIS.UI.csproj.GenerateResource.Cache

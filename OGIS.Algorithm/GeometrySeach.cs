@@ -82,7 +82,12 @@ namespace OGIS.Algorithm
             }
             if (lengthAB * ratio / (1 + ratio) > radius)
                 return false;
-            double cosB = lengthAB * ratio / 2.0 / radius + (1 / ratio - ratio) * radius / 2.0 / lengthAB;
+           // double cosB = lengthAB * ratio / 2.0 / radius + (1 / ratio - ratio) * radius / 2.0 / lengthAB;
+          //  if (cosB > 1 || cosB < 0)
+          //      cosB = 0.5;
+            double cosB = (Math.Cos(radius * ratio) - Math.Cos(radius) * Math.Cos(lengthAB)) / Math.Sin(lengthAB) * Math.Sin(radius); 
+           
+
             double angle = lengthAB == 0 ? angleBC : Math.Acos(cosB) * 180 / _pai;
             try
             {
@@ -103,8 +108,8 @@ namespace OGIS.Algorithm
                     geodetic.SecondSubject(longitudeT, latitudeT, coordArr[1][0], coordArr[1][1], out lengthBt, out angleTB, out angleBT);//查询该点到B点的距离
                     derta = radius - lengthAt;
                     angle = angle + (derta / lengthAB) * 180 / _pai;
-                    if (index > 1000)
-                        throw new Exception("计算两点等距离点错误");
+                    if (index > 10000)
+                        throw new Exception("The error is occured in  search the equiratio point!");
                 }
                 resultCoord = new double[,] { { longitudeT, latitudeT } };
                 distanceTA = lengthAt;

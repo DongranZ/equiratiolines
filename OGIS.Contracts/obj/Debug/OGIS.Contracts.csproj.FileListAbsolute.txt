@@ -8,3 +8,8 @@ D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Contracts.dll
 D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Contracts.pdb
 D:\业务工作\2023\OGIS.Algorithm\OGIS.Contracts\obj\Debug\OGIS.Contracts.dll
 D:\业务工作\2023\OGIS.Algorithm\OGIS.Contracts\obj\Debug\OGIS.Contracts.pdb
+D:\业务工作\2023\equiratiolines\Output\OGIS.Contracts.dll
+D:\业务工作\2023\equiratiolines\Output\OGIS.Contracts.pdb
+D:\业务工作\2023\equiratiolines\OGIS.Contracts\obj\Debug\OGIS.Contracts.csprojResolveAssemblyReference.cache
+D:\业务工作\2023\equiratiolines\OGIS.Contracts\obj\Debug\OGIS.Contracts.dll
+D:\业务工作\2023\equiratiolines\OGIS.Contracts\obj\Debug\OGIS.Contracts.pdb

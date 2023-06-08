@@ -10,3 +10,8 @@ D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Core.dll
 D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Core.pdb
 D:\业务工作\2023\OGIS.Algorithm\OGIS.Core\obj\Debug\OGIS.Core.dll
 D:\业务工作\2023\OGIS.Algorithm\OGIS.Core\obj\Debug\OGIS.Core.pdb
+D:\业务工作\2023\equiratiolines\Output\OGIS.Core.dll
+D:\业务工作\2023\equiratiolines\Output\OGIS.Core.pdb
+D:\业务工作\2023\equiratiolines\OGIS.Core\obj\Debug\OGIS.Core.csprojResolveAssemblyReference.cache
+D:\业务工作\2023\equiratiolines\OGIS.Core\obj\Debug\OGIS.Core.dll
+D:\业务工作\2023\equiratiolines\OGIS.Core\obj\Debug\OGIS.Core.pdb

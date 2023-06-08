@@ -278,7 +278,7 @@
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "MapWindow V1.0";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
