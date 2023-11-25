@@ -15,6 +15,7 @@ using ESRI.ArcGIS.Carto;
 using ArcengineHelper.MapHelper;
 using ArcengineHelper.Entity;
 using ESRI.ArcGIS.SystemUI;
+
 namespace OGIS.UI
 {
     public partial class RatioPointControl : UserControl
@@ -62,8 +63,12 @@ namespace OGIS.UI
 
         public void Reset()
         {
-            //Reset page
-            lblDistance.Text = "Distance:";
+            //重置页面显示
+            //chkAutoOKAll.Checked = false;
+           // if (chkAutoOKAll.Checked)
+           // {
+                lblDistance.Text = "Distance:";
+           // }
            
             _p = null; _q = null; _o = null;
             _pq = null; _op = null; _oq = null;
@@ -93,7 +98,7 @@ namespace OGIS.UI
             else
             {
                 if (cmbAlgorithm.Items.Count == 2)
-                    cmbAlgorithm.Items.Add("Circle method");
+                    cmbAlgorithm.Items.Add("轨迹圆法");
             }
         }
 
@@ -119,17 +124,21 @@ namespace OGIS.UI
             double dbRatio = 1;
             if (!txtRatio.Validable)
             {
-                MessageBox.Show("The ratio is error!");
+                MessageBox.Show("请设置正确比例");
                 return;
             }
             dbRatio = txtRatio.Ratio;
 
             double ratioLength;
-           
+            //计算大地线
             _RatioPoint.SetGeodeticSolutionType(_GeodeticSolution);
             var omPoint = _RatioPoint.FindPointBy2Point(pMarker, qMarker, true, dbRatio, out ratioLength);
             var omLength = _Measure.CalculateLength(omPoint, pMarker);
-             
+            //计算反向大地线
+            //double disRatioLength;
+            //var onPoint = _geometryCalculate.FindPointBy2Point(pMarker, qMarker, false, 1, out disRatioLength);
+            //var onLength = _geometryCalculate.CalculateLength(omPoint, pMarker);
+            //计算
             txt_pq_length.Text = (length / ConstantValue.Nm).ToString();
 
             txtOmLon.Text = omPoint.X.ToString();
@@ -139,7 +148,7 @@ namespace OGIS.UI
 
         private bool DoCircle(IPoint pPoint, IPoint qPoint, IPoint sPoint, double ratio, double ds, double dbStep, double dbOpmin, double dbOpMax, double ratioA, double ratioB)
         {
-            //Circle centry
+            //计算圆心
             double dbLengthPQ, angle12, angle21;
             double centerX, centerY, centerLength, angleC;
             double r;
@@ -199,17 +208,7 @@ namespace OGIS.UI
             }
             return true;
         }
-        /// <summary>
-        /// Pendulum method
-        /// </summary>
-        /// <param name="pPoint"></param>
-        /// <param name="qPoint"></param>
-        /// <param name="sPoint"></param>
-        /// <param name="ratio"></param>
-        /// <param name="ds"></param>
-        /// <param name="ratioA"></param>
-        /// <param name="ratioB"></param>
-        /// <returns></returns>
+        //钟摆法
         bool DoOkLine(IPoint pPoint, IPoint qPoint, IPoint sPoint, double ratio, double ds, double ratioA, double ratioB)
         {
             var lnglats = new double[3][];
@@ -219,7 +218,6 @@ namespace OGIS.UI
 
             double[,] resultCoord;
             double distanceTA, distanceTB;
-            //0.00001,
             _GeometrySearch.SearchPointRatio2Point(lnglats, ds, ratio, 1, 0.00001, _GeodeticSolution, out resultCoord, out distanceTA, out distanceTB);
             if (resultCoord != null && !double.IsNaN(resultCoord[0, 1]) && !double.IsNaN(resultCoord[0, 1]))
             {
@@ -264,12 +262,11 @@ namespace OGIS.UI
             }
             else
             {
-               // MessageBox.Show("The equiratio point isn't found!", "Tip");
-               return false;
-              //  return true;
+                MessageBox.Show("当前距离没有等距点", "提示");
+                return false;
             }
         }
-        //Circle method
+        //轨迹圆法
         bool DoOkCircleLine(IPoint pPoint, IPoint qPoint, IPoint circlePoint, double ratio, double ratioA, double ratioB)
         {
             if (!circlePoint.IsEmpty)
@@ -285,7 +282,7 @@ namespace OGIS.UI
                 var rowM = new RowModel()
                 {
                     index = _ds.Count + 1,
-                    CalculateType = "Circle method",
+                    CalculateType = "轨迹圆法",
                     PLon = pPoint.X,
                     PLat = pPoint.Y,
                     QLon = qPoint.X,
@@ -308,7 +305,7 @@ namespace OGIS.UI
             }
             else
             {
-                MessageBox.Show("Can't find the equiratio point!", "Tip");
+                MessageBox.Show("当前距离没有等距点", "提示");
                 return false;
             }
         }
@@ -317,9 +314,12 @@ namespace OGIS.UI
         {
             try
             {
-                
+                //绘制O
+                //_gdbManager.AddSingleGeomFeatureToLayar("绘图点", o, "", 0);
                 SucceedOption(o);
-             
+
+                //2.绘制POQ
+                // 设置坐标系
                 ISpatialReferenceFactory3 spatialReferenceFactory = new SpatialReferenceEnvironmentClass();
                 ISpatialReference spatialReference = spatialReferenceFactory.CreateSpatialReference((int)esriSRGeoCSType.esriSRGeoCS_WGS1984);
                 p.SpatialReference = spatialReference;
@@ -328,16 +328,18 @@ namespace OGIS.UI
 
                 var line1 = GeometryHelper.ConstructGeodeticLine(p, q, spatialReference, _GeodeticSolution);
                 _pq = line1;
-                
+                //_gdbManager.AddSingleGeomFeatureToLayar("绘图线", line1, "", 1);
                 SucceedOption(line1);
 
                 var line2 = GeometryHelper.ConstructGeodeticLine(o, p, spatialReference, _GeodeticSolution);
                 _op = line2;
-               
+                //_gdbManager.AddSingleGeomFeatureToLayar("绘图线", line2, "", 1);
+               // SucceedOption(line2);
 
                 var line3 = GeometryHelper.ConstructGeodeticLine(o, q, spatialReference, _GeodeticSolution);
                 _oq = line3;
-                
+                //_gdbManager.AddSingleGeomFeatureToLayar("绘图线", line3, "", 1);
+              //  SucceedOption(line3);
 
                 if (isRefresh)
                     _AxMapControl.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
@@ -384,11 +386,11 @@ namespace OGIS.UI
 
         public void selectClear()
         {
-            //Clear map element
+            //map清图
             //GlobelCache.Instance.CurrentElement = null;
             //GlobelCache.Instance.DrawGeometryEntiry = null;
             //ElementCache.Instance.Clear();
-            //Clear map selection
+            // 清除高亮
             IGraphicsContainer pGraphicsContainer = (IGraphicsContainer)_AxMapControl.ActiveView;
             pGraphicsContainer.DeleteAllElements();
             _AxMapControl.Map.ClearSelection();
@@ -400,7 +402,7 @@ namespace OGIS.UI
         private bool ExportShps(ISpatialReference sp)
         {
             SaveFileDialog saveFileDlg = new SaveFileDialog();
-            saveFileDlg.Title = "Save the Drawing Files";
+            saveFileDlg.Title = "保存绘图文件";
             string strPath = "";
             if (saveFileDlg.ShowDialog() == DialogResult.OK)
             {
@@ -416,18 +418,18 @@ namespace OGIS.UI
                 System.IO.Directory.CreateDirectory(strPath);
             try
             {
-                //Point P and Q
+                //PQ点
                 var logic = ShpServiceProvider.Instance;
                 var list = new List<IGeometry>();
                 list.Add(_p);
                 list.Add(_q);
                 logic.ExportMultToShp(list, strPath, "pqPoint", sp);
-                //Line PQ
+                //PQ 线
                 if (_pq != null)
                 {
                     logic.ExportToShp(_pq, strPath, "pqLine", sp);
                 }
-                //Point O 
+                //O point
                 var oList = new List<IGeometry>();
                 foreach (var item in _ds)
                 {
@@ -436,8 +438,7 @@ namespace OGIS.UI
                     oList.Add(opint);
                 }
                 logic.ExportMultToShp(oList, strPath, "oPoints", sp);
-               
-                //Eqiratio
+                //oLine
                 if (_ds.Count > 1)
                 {
                     List<IPoint> oPoints = new List<IPoint>();
@@ -450,8 +451,7 @@ namespace OGIS.UI
                     var oLine = GeometryHelper.ConstructGeodeticLine(oPoints, null, _GeodeticSolution);
                     logic.ExportToShp(oLine, strPath, "oLine", sp);
                 }
-
-                //Line OP and OQ
+                //OP,OQ
                 if (_ds.Count > 1)
                 {
                     var opqList = new List<IGeometry>();
@@ -470,18 +470,18 @@ namespace OGIS.UI
                     logic.ExportMultToShp(opqList, strPath, "opqLine", sp);
                 }
 
-                WriteLog.Instance.WriteMsg(LogType.Info, "Export successed！");
+                WriteLog.Instance.WriteMsg(LogType.Info, "导出完成！");
                 return true;
             }
             catch (Exception ex)
             {
-                WriteLog.Instance.WriteMsg(LogType.Error, string.Format("error，method：{0}，error：{1}", "btnShpAll_Click", ex));
+                WriteLog.Instance.WriteMsg(LogType.Error, string.Format("发生异常，方法：{0}，错误：{1}", "btnShpAll_Click", ex));
                 return false;
             }
         }
 
         /// <summary>
-        /// Map mousedown
+        /// 地图控件鼠标点击事件
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -534,7 +534,7 @@ namespace OGIS.UI
             }
             catch (Exception ex)
             {
-                WriteLog.Instance.WriteMsg(LogType.Error, string.Format("error，method：{0}，error：{1}", "axMapCtrl_OnMouseDown", ex));
+                WriteLog.Instance.WriteMsg(LogType.Error, string.Format("地图出现异常，方法：{0}，错误：{1}", "axMapCtrl_OnMouseDown", ex));
             }
         }
 
@@ -545,7 +545,7 @@ namespace OGIS.UI
         private void btnClickP_Click(object sender, EventArgs e)
         {
             btnIdx = 1;
-            
+            //_AxMapControl.OnMouseDown += axMapCtrl_OnMouseDown;
             ESRI.ArcGIS.SystemUI.ICommand pCommand;
             pCommand = new ESRI.ArcGIS.Controls.ControlsMapUpCommand();
             pCommand.OnCreate(_AxMapControl.Object);
@@ -555,6 +555,7 @@ namespace OGIS.UI
         private void btnClickQ_Click(object sender, EventArgs e)
         {
             btnIdx = 2;
+            //_AxMapControl.OnMouseDown += axMapCtrl_OnMouseDown;
             ESRI.ArcGIS.SystemUI.ICommand pCommand;
             pCommand = new ESRI.ArcGIS.Controls.ControlsMapUpCommand();
             pCommand.OnCreate(_AxMapControl.Object);
@@ -564,6 +565,7 @@ namespace OGIS.UI
         private void btnClickMap_Click(object sender, EventArgs e)
         {
             btnIdx = 3;
+            //_AxMapControl.OnMouseDown += axMapCtrl_OnMouseDown;
             ESRI.ArcGIS.SystemUI.ICommand pCommand;
             pCommand = new ESRI.ArcGIS.Controls.ControlsMapUpCommand();
             pCommand.OnCreate(_AxMapControl.Object);
@@ -579,7 +581,7 @@ namespace OGIS.UI
                 || string.IsNullOrEmpty(txt_end_lng.Text) || string.IsNullOrEmpty(txt_end_lat.Text)
                 || string.IsNullOrEmpty(tbxDistance.Text) || string.IsNullOrEmpty(cmbSelectType.Text))
             {
-                MessageBox.Show("请确认是否有未填项", "Tip");
+                MessageBox.Show("请确认是否有未填项", "提示");
                 return;
             }
 
@@ -616,118 +618,133 @@ namespace OGIS.UI
             qPoint = new PointClass();
             qPoint.PutCoords(double.Parse(txt_end_lng.Text), double.Parse(txt_end_lat.Text));
 
-            double ds = double.Parse(tbxDistance.Text);//n mile
+            double ds = double.Parse(tbxDistance.Text);//单位海里
             double dbOpmin, dbOpMax;
             dbOpmin = double.Parse(txtOpMin.Text);
             dbOpMax = double.Parse(txtOpMax.Text);
             double ratio = txtRatio.Ratio;
             double ratioA = txtRatio.RatioNumerator;
             double ratioB = txtRatio.RatioDenominator;
-            if (dbOpmin > dbOpMax )
+            if (dbOpmin > dbOpMax)
             {
-                MessageBox.Show(" The minimun distance of OP should be less than the maximum distance.");
+                MessageBox.Show("OP起始距离必须大于终止距离！");
                 return;
             }
 
-            //Generated the auxiliary points
-           
+            //造一个辅助点
+            //造辅助点映射点
             IPoint hPoint1, hPoint2;
             GetHelpPoint(pMarker, qMarker, out hPoint1, out hPoint2);
             //_gdbManager.AddSingleGeomFeatureToLayar("绘图点", hPoint1, "", 0);
             //_gdbManager.AddSingleGeomFeatureToLayar("绘图点", hPoint2, "", 0);
             try
             {
-               // if (chkAutoOKAll.Checked)
-                //{
+               
                     _ds.Clear();
                     double dbStep = double.Parse(tbxDistance.Text);
-                    if (cmbAlgorithm.Text == "Circle Method")
+                    if (cmbAlgorithm.Text == "轨迹圆法")
                     {
                         sPoint = hPoint1;
                         DoCircle(pPoint, qPoint, sPoint, ratio, ds * ConstantValue.Nm, dbStep, dbOpmin, dbOpMax, ratioA, ratioB);
                     }
                     else
                     {
-                        #region "while left"
+                        #region "while循环"
                         ds = dbOpmin;
                         int count = 0;
-                        while (ds >= dbOpmin || ds <= dbOpMax)
+                        try
                         {
-                            switch (cmbAlgorithm.Text)
+                            while (ds >= dbOpmin || ds <= dbOpMax)
                             {
-                                case "Pendulum method":
-                                    // S点(Auxiliary point)
-                                    sPoint = hPoint1;
-                                    //sPoint = new PointClass();
-                                    //sPoint.PutCoords(double.Parse(txtDPointX.Text), double.Parse(txtDPointY.Text));
-                                    if (DoOkLine(pPoint, qPoint, sPoint, ratio, ds * ConstantValue.Nm, ratioA, ratioB))
-                                    {
-                                        drawGraphic(_p, _q, _o, false);
-                                    }
+                                switch (cmbAlgorithm.Text)
+                                {
+                                    case "Pendulum method":
+                                        // S点(辅助点)
+                                        sPoint = hPoint1;
+                                        //sPoint = new PointClass();
+                                        //sPoint.PutCoords(double.Parse(txtDPointX.Text), double.Parse(txtDPointY.Text));
+                                        if (DoOkLine(pPoint, qPoint, sPoint, ratio, ds * ConstantValue.Nm, ratioA, ratioB))
+                                        {
+                                            drawGraphic(_p, _q, _o, false);
+                                        }
+                                        break;
+                                        //case "圆弧求交法":
+                                        //    if (DoOkArc(pPoint, qPoint, null, ratio, ds, ratioA, ratioB))
+                                        //    {
+                                        //        drawGraphic(_p, _q, _o, false);
+                                        //    }
+                                        //    break;
+                                }
+                                count++;
+                                if (ds == dbOpMax)
+                                {
                                     break;
-                                    //case "Circle intersection":
-                                    //    if (DoOkArc(pPoint, qPoint, null, ratio, ds, ratioA, ratioB))
-                                    //    {
-                                    //        drawGraphic(_p, _q, _o, false);
-                                    //    }
-                                    //    break;
-                            }
-                            count++;
-                            if (ds == dbOpMax)
-                            {
-                                break;
-                            }
-                            ds = Math.Sqrt(dbOpmin * dbOpmin + count * count * dbStep * dbStep);
-                            if (ds >= dbOpMax)
-                            {
-                                ds = dbOpMax;
-                            }
+                                }
+                                ds = Math.Sqrt(dbOpmin * dbOpmin + count * count * dbStep * dbStep);
+                                if (ds >= dbOpMax)
+                                {
+                                    ds = dbOpMax;
+                                }
 
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            WriteLog.Instance.WriteErrMsg("计算异常", ex);
                         }
                         #endregion
                         var hDs = _ds.Reverse().ToList();
                         hDs.RemoveAt(hDs.Count - 1);
                         _ds.Clear();
                         hDs.ForEach(item => _ds.Add(item));
-                        #region "while right"
-                        ds = dbOpmin;
-                        count = 0;
-                        while (ds >= dbOpmin || ds <= dbOpMax)
+                        try
                         {
-                            switch (cmbAlgorithm.Text)
+
+                            #region "while循环2"
+                            ds = dbOpmin;
+                            count = 0;
+                            while (ds >= dbOpmin || ds <= dbOpMax)
                             {
-                                case "Pendulum method":
-                                    // S点(Auxiliary point)
-                                    sPoint = hPoint2;
-                                    //sPoint = new PointClass();
-                                    //sPoint.PutCoords(double.Parse(txtDPointX.Text), double.Parse(txtDPointY.Text));
-                                    if (DoOkLine(pPoint, qPoint, sPoint, ratio, ds * ConstantValue.Nm, ratioA, ratioB))
-                                    {
-                                        drawGraphic(_p, _q, _o, false);
-                                    }
+                                switch (cmbAlgorithm.Text)
+                                {
+                                    case "Pendulum method":
+                                        // S点(辅助点)
+                                        sPoint = hPoint2;
+                                        //sPoint = new PointClass();
+                                        //sPoint.PutCoords(double.Parse(txtDPointX.Text), double.Parse(txtDPointY.Text));
+                                        if (DoOkLine(pPoint, qPoint, sPoint, ratio, ds * ConstantValue.Nm, ratioA, ratioB))
+                                        {
+                                            drawGraphic(_p, _q, _o, false);
+                                        }
+                                        break;
+                                        //case "圆弧求交法":
+                                        //    if (DoOkArc(pPoint, qPoint, null, ratio, ds, ratioA, ratioB))
+                                        //    {
+                                        //        drawGraphic(_p, _q, _o, false);
+                                        //    }
+                                        //    break;
+                                }
+                                count++;
+                                if (ds == dbOpMax)
+                                {
                                     break;
-                                    //case "Circle intersection":
-                                    //    if (DoOkArc(pPoint, qPoint, null, ratio, ds, ratioA, ratioB))
-                                    //    {
-                                    //        drawGraphic(_p, _q, _o, false);
-                                    //    }
-                                    //    break;
+                                }
+                                ds = Math.Sqrt(dbOpmin * dbOpmin + count * count * dbStep * dbStep);
+                                if (ds >= dbOpMax)
+                                {
+                                    ds = dbOpMax;
+                                }
+
                             }
-                            count++;
-                            if (ds == dbOpMax)
-                            {
-                                break;
-                            }
-                            ds = Math.Sqrt(dbOpmin * dbOpmin + count * count * dbStep * dbStep);
-                            if (ds >= dbOpMax)
-                            {
-                                ds = dbOpMax;
-                            }
+                            #endregion
 
                         }
-                        #endregion
+                        catch (Exception ex)
+                        {
+                            WriteLog.Instance.WriteErrMsg("计算异常", ex);
+                        }
                     }
-                    //绘制 equiratio Line
+                    //绘制OLine
                     if (_ds.Count >= 2)
                     {
                         List<IPoint> oPoints = new List<IPoint>();
@@ -742,37 +759,15 @@ namespace OGIS.UI
                         SucceedOption(oLine);
                     }
                     _AxMapControl.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
-                }
-              /*  else
-                {
-                    switch (cmbAlgorithm.Text)
-                    {
-                        case "Pendulum method":
-                            // S点(辅助点)
-                            sPoint = new PointClass();
-                            sPoint.PutCoords(double.Parse(txtDPointX.Text), double.Parse(txtDPointY.Text));
-                            ds = double.Parse(tbxDistance.Text) * ConstantValue.Nm;
-                            if (DoOkLine(pPoint, qPoint, sPoint, 1, ds, ratioA, ratioB))
-                            {
-                                drawGraphic(_p, _q, _o, true);
-                            }
-                            break;
-                            //case "圆弧求交法":
-                            //    ds = tbxDistance.Text != "" ? double.Parse(tbxDistance.Text) : 60;
-                            //    if (DoOkArc(pPoint, qPoint, null, ratio, ds, ratioA, ratioB))
-                            //    {
-                            //        drawGraphic(_p, _q, _o, true);
-                            //    }
-                            //    break;
-                    }
-                }
-            } */
+                
+              
+            }
             catch (Exception ex)
             {
                 //WriteLog.Instance.WriteErrMsg("计算出错", ex);
             }
 
-             
+            // 重置PQ两点的地图点选状态
             mapClickP = false;
             mapClickQ = false;
         }
@@ -817,7 +812,7 @@ namespace OGIS.UI
                 dt.Columns.Add("Distance of OQ (n mile)");
                 dt.Columns.Add("Error of OP (m)");
                 dt.Columns.Add("Error of OQ (m)");
-                dt.Columns.Add("OP-OQ(m)");
+                dt.Columns.Add("OP-OQ(m)"); ;
                 foreach (var item in _ds)
                 {
                     var dr = dt.NewRow();
@@ -837,11 +832,11 @@ namespace OGIS.UI
                     dt.Rows.Add(dr);
                 }
                 logic.ExportToExcelNPOI(dt);
-                MessageBox.Show("Export successed!");
+                MessageBox.Show("导出完成");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Export failed!");
+                MessageBox.Show("导出失败");
             }
         }
 
@@ -856,7 +851,7 @@ namespace OGIS.UI
 
             if (!txtRatio.Validable)
             {
-                MessageBox.Show("ratio error!");
+                MessageBox.Show("请设置正确比例");
                 return;
             }
             double dbRatio = txtRatio.Ratio;
@@ -879,7 +874,15 @@ namespace OGIS.UI
                 txtOpMax.Text = (dbRatio * length / (1 - dbRatio)).ToString();
             }
         }
-      
+        private void chkAutoOKAll_CheckedChanged(object sender, EventArgs e)
+        {
+           // if (chkAutoOKAll.Checked)
+            {
+                lblDistance.Text = "Dsitance:";
+            }
+          
+           
+        }
         private void cmbAlgorithm_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbAlgorithm.Text != "Pendulum method")
@@ -894,12 +897,7 @@ namespace OGIS.UI
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void label21_Click(object sender, EventArgs e)
         {
 
         }

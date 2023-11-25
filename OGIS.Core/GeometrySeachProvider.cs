@@ -10,6 +10,6 @@ namespace OGIS.Core
     public class IGeometrySeachProvider
     {
         private static IGeometrySearch _instance;
-        public static IGeometrySearch Instance { get { return  _instance ?? new GeometrySeach(); }}
+        public static IGeometrySearch Instance { get { return _instance ?? new GeometrySeach(); } }
     }
 }

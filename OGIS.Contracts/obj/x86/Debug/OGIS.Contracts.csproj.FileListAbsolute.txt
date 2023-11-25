@@ -1,0 +1,6 @@
+C:\E\richway\OGIS.Algorithm\OGIS.Contracts\bin\x86\Debug\OGIS.Contracts.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Contracts\bin\x86\Debug\OGIS.Contracts.pdb
+C:\E\richway\OGIS.Algorithm\OGIS.Contracts\obj\x86\Debug\OGIS.Contracts.csproj.AssemblyReference.cache
+C:\E\richway\OGIS.Algorithm\OGIS.Contracts\obj\x86\Debug\OGIS.Contracts.csproj.CoreCompileInputs.cache
+C:\E\richway\OGIS.Algorithm\OGIS.Contracts\obj\x86\Debug\OGIS.Contracts.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Contracts\obj\x86\Debug\OGIS.Contracts.pdb

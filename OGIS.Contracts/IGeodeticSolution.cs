@@ -8,6 +8,7 @@ namespace OGIS.Contracts
 {
     public interface IGeodeticSolution
     {
+        double A { get; }
         void SetParameterType(int type);
         /// <summary>
         /// 设置椭球参数

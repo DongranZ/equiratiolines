@@ -15,7 +15,7 @@ namespace OGIS.Core
     public static class NPOIHelper
     {
         /// <summary>
-        /// dataExport
+        /// 数据导出
         /// </summary>
         /// <param name="data"></param>
         /// <param name="sheetName"></param>
@@ -27,12 +27,12 @@ namespace OGIS.Core
             IRow rowHead = sheet.CreateRow(0);
 
 
-            
+            //填写表头
             for (int i = 0; i < data.Columns.Count; i++)
             {
                 rowHead.CreateCell(i, CellType.String).SetCellValue(data.Columns[i].ColumnName.ToString());
             }
-             
+            //填写内容
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 IRow row = sheet.CreateRow(i + 1);
@@ -52,7 +52,8 @@ namespace OGIS.Core
                 workbook.Write(stream);
                 stream.Close();
             }
-                GC.Collect();
+            //MessageBox.Show("导出数据成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GC.Collect();
         }
 
         public static DataSet ExcelToDataSet(string fileName)
@@ -185,7 +186,7 @@ namespace OGIS.Core
         }
 
         /// <summary>
-        ///  fillData
+        /// 填充数据
         /// </summary>
         /// <param name="row"></param>
         /// <param name="evaluator"></param>
@@ -249,7 +250,7 @@ namespace OGIS.Core
         }
 
         /// <summary>
-        /// getCells
+        /// 获取单元格
         /// </summary>
         /// <param name="sheet"></param>
         /// <returns></returns>
@@ -272,7 +273,7 @@ namespace OGIS.Core
         }
 
         /// <summary>
-        /// dataExport
+        /// 数据导出
         /// </summary>
         /// <param name="data"></param>
         /// <param name="sheetName"></param>
@@ -282,7 +283,7 @@ namespace OGIS.Core
         }
 
         /// <summary>
-        /// dataExport
+        /// 数据导出
         /// </summary>
         /// <param name="data"></param>
         /// <param name="sheetName"></param>
@@ -300,12 +301,13 @@ namespace OGIS.Core
             ISheet sheet = workbook.CreateSheet(sheetName);
             IRow rowHead = sheet.CreateRow(0);
 
- 
+
+            //填写表头
             for (int i = 0; i < data.Columns.Count; i++)
             {
                 rowHead.CreateCell(i, CellType.String).SetCellValue(data.Columns[i].ColumnName.ToString());
             }
-             
+            //填写内容
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 IRow row = sheet.CreateRow(i + 1);
@@ -325,7 +327,7 @@ namespace OGIS.Core
                 workbook.Write(stream);
                 stream.Close();
             }
-            MessageBox.Show("Success!", "Tip", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("导出数据成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             GC.Collect();
         }
 

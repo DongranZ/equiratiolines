@@ -88,7 +88,7 @@ namespace ArcengineHelper.DisplayHelper
         }
 
         /// <summary>
-        ///  
+        /// 清空绘图
         /// </summary>
         /// <param name="axMapControl"></param>
         public static void Clear(AxMapControl axMapControl)
@@ -102,14 +102,14 @@ namespace ArcengineHelper.DisplayHelper
         }
 
         /// <summary>
-        /// 
+        /// 清除绘图子图层
         /// </summary>
         /// <param name="axMapControl"></param>
         /// <param name="subLayerName"></param>
         public static void ClearDisplay(AxMapControl axMapControl,string subLayerName )
         {
-            IGraphicsLayer sublayer = MapLayerHelper.FindOrCreateGraphicsSubLayer(subLayerName, axMapControl.Map);
-            IGraphicsContainer gc = sublayer as IGraphicsContainer;//          
+            IGraphicsLayer sublayer = MapLayerHelper.FindOrCreateGraphicsSubLayer(subLayerName, axMapControl.Map);//返回的实际上是一个GraphicsSubLayer的实例对象
+            IGraphicsContainer gc = sublayer as IGraphicsContainer;//这里之所以可以QI，是因为GraphicsSubLayer同时实现了IGraphicsLayer和IGraphicsContainer              
             gc.DeleteAllElements();
             axMapControl.ActiveView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, axMapControl.ActiveView.Extent);
         }

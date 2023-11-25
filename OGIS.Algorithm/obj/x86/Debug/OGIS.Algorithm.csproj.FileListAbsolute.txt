@@ -1,0 +1,12 @@
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\bin\x86\Debug\lib\geodc_d.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\bin\x86\Debug\lib\geodc_d.pdb
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\bin\x86\Debug\lib\GeographicLib_d.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\bin\x86\Debug\OGIS.Algorithm.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\bin\x86\Debug\OGIS.Algorithm.pdb
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\bin\x86\Debug\OGIS.Contracts.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\bin\x86\Debug\OGIS.Contracts.pdb
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\x86\Debug\OGIS.Algorithm.csproj.AssemblyReference.cache
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\x86\Debug\OGIS.Algorithm.csproj.CoreCompileInputs.cache
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\x86\Debug\OGIS.Algorithm.csproj.CopyComplete
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\x86\Debug\OGIS.Algorithm.dll
+C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\x86\Debug\OGIS.Algorithm.pdb

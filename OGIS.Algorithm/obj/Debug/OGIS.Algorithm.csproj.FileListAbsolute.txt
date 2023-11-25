@@ -1,3 +1,6 @@
+C:\E\richway\OGIS.Algorithm\Output\lib\geodc_d.dll
+C:\E\richway\OGIS.Algorithm\Output\lib\geodc_d.pdb
+C:\E\richway\OGIS.Algorithm\Output\lib\geodc_d.ilk
 C:\E\richway\OGIS.Algorithm\Output\OGIS.Algorithm.dll
 C:\E\richway\OGIS.Algorithm\Output\OGIS.Algorithm.pdb
 C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csproj.AssemblyReference.cache
@@ -5,13 +8,35 @@ C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csproj.CoreC
 C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csproj.CopyComplete
 C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
 C:\E\richway\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb
-D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Algorithm.dll
-D:\业务工作\2023\OGIS.Algorithm\Output\OGIS.Algorithm.pdb
-D:\业务工作\2023\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csprojResolveAssemblyReference.cache
-D:\业务工作\2023\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
-D:\业务工作\2023\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb
-D:\业务工作\2023\equiratiolines\Output\OGIS.Algorithm.dll
-D:\业务工作\2023\equiratiolines\Output\OGIS.Algorithm.pdb
-D:\业务工作\2023\equiratiolines\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csprojResolveAssemblyReference.cache
-D:\业务工作\2023\equiratiolines\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
-D:\业务工作\2023\equiratiolines\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\Output\lib\geodc_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\Output\lib\geodc_d.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\Output\lib\GeographicLib_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\Output\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\Output\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csprojResolveAssemblyReference.cache
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\Output\lib\geodc_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\Output\lib\geodc_d.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\Output\lib\GeographicLib_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\Output\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\Output\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\ogis-2\OGIS.Algorithm\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csprojResolveAssemblyReference.cache
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\Output\lib\geodc_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\Output\lib\geodc_d.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\Output\lib\GeographicLib_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\Output\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\Output\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csprojResolveAssemblyReference.cache
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\Output\lib\geodc_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\Output\lib\geodc_d.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\Output\lib\GeographicLib_d.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\Output\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\Output\OGIS.Algorithm.pdb
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.csprojResolveAssemblyReference.cache
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.dll
+D:\学习资料\3.地球椭球面任意两点之间的等比线计算\第三次提交\equiratiolines v1.0\OGIS.Algorithm\obj\Debug\OGIS.Algorithm.pdb

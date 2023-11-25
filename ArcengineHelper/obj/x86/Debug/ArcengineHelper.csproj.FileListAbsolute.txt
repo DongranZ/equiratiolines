@@ -1,0 +1,10 @@
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\bin\x86\Debug\ArcengineHelper.dll
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\bin\x86\Debug\ArcengineHelper.pdb
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\bin\x86\Debug\stdole.dll
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\obj\x86\Debug\ArcengineHelper.csproj.AssemblyReference.cache
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\obj\x86\Debug\ArcengineHelper.Properties.Resources.resources
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\obj\x86\Debug\ArcengineHelper.csproj.GenerateResource.cache
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\obj\x86\Debug\ArcengineHelper.csproj.CoreCompileInputs.cache
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\obj\x86\Debug\ArcengineHelper.csproj.CopyComplete
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\obj\x86\Debug\ArcengineHelper.dll
+C:\E\richway\OGIS.Algorithm\ArcengineHelper\obj\x86\Debug\ArcengineHelper.pdb

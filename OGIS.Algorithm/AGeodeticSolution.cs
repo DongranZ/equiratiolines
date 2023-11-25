@@ -46,6 +46,7 @@ namespace OGIS.Algorithm
         protected double _paramE;
 
         private static double f = 0;//测试用
+        public double A { get { return _earthA; } }
         public bool FirstSubject(double L1, double B1, double dbAlp12, double dbLength, out double L2, out double B2, out double dbAlp21)
         {
             try

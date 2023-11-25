@@ -62,8 +62,9 @@
             this.pnlTop.Controls.Add(this.toolStrip1);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1266, 52);
+            this.pnlTop.Size = new System.Drawing.Size(950, 42);
             this.pnlTop.TabIndex = 0;
             // 
             // toolStrip1
@@ -85,7 +86,7 @@
             this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1266, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(950, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -220,22 +221,25 @@
             // pnlBottom
             // 
             this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 697);
+            this.pnlBottom.Location = new System.Drawing.Point(0, 557);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(1266, 42);
+            this.pnlBottom.Size = new System.Drawing.Size(950, 34);
             this.pnlBottom.TabIndex = 1;
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 52);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 42);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.tpgLeft);
-            this.splitContainer1.Size = new System.Drawing.Size(1266, 645);
-            this.splitContainer1.SplitterDistance = 507;
+            this.splitContainer1.Size = new System.Drawing.Size(950, 515);
+            this.splitContainer1.SplitterDistance = 380;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 2;
             // 
             // tpgLeft
@@ -244,41 +248,45 @@
             this.tpgLeft.Controls.Add(this.tpgToc);
             this.tpgLeft.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tpgLeft.Location = new System.Drawing.Point(0, 0);
+            this.tpgLeft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpgLeft.Name = "tpgLeft";
             this.tpgLeft.SelectedIndex = 0;
-            this.tpgLeft.Size = new System.Drawing.Size(507, 645);
+            this.tpgLeft.Size = new System.Drawing.Size(380, 515);
             this.tpgLeft.TabIndex = 0;
             // 
             // tpgSet
             // 
-            this.tpgSet.Location = new System.Drawing.Point(4, 25);
+            this.tpgSet.Location = new System.Drawing.Point(4, 22);
+            this.tpgSet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpgSet.Name = "tpgSet";
-            this.tpgSet.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgSet.Size = new System.Drawing.Size(499, 616);
+            this.tpgSet.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpgSet.Size = new System.Drawing.Size(372, 489);
             this.tpgSet.TabIndex = 0;
             this.tpgSet.Text = "Setting";
             this.tpgSet.UseVisualStyleBackColor = true;
             // 
             // tpgToc
             // 
-            this.tpgToc.Location = new System.Drawing.Point(4, 25);
+            this.tpgToc.Location = new System.Drawing.Point(4, 22);
+            this.tpgToc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tpgToc.Name = "tpgToc";
-            this.tpgToc.Padding = new System.Windows.Forms.Padding(3);
-            this.tpgToc.Size = new System.Drawing.Size(499, 616);
+            this.tpgToc.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpgToc.Size = new System.Drawing.Size(372, 489);
             this.tpgToc.TabIndex = 1;
-            this.tpgToc.Text = "Maplayers";
+            this.tpgToc.Text = "Layers";
             this.tpgToc.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1266, 739);
+            this.ClientSize = new System.Drawing.Size(950, 591);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.pnlTop);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
-            this.Text = "MapWindow V1.0";
+            this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
